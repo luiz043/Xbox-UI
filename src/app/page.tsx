@@ -4,7 +4,7 @@ import GameCards from "./components/game-cards"
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen   bg-linear-to-br from-green-900 to-green-500 font-sans ">
+    <div className="flex flex-col min-h-screen bg-linear-to-br from-green-900 via-emerald-500 to-green-500 bg-size-[400%_400%] animate-gradient-x font-sans">
       <div className="w-full ">
         <Header></Header>
       </div>

@@ -30,12 +30,11 @@ export default function GameCards() {
     setLoading(false)
   }, [])
 
-  const removed = data?.photos
-
   const template = (img) => {
     return (
       <img
-        className="rounded-xl  shadow-2xl border-2 border-green-500"
+        onClick={() => openImg(img)}
+        className="rounded-xl hover:shadow-neutral-600 hover:scale-105  transition-all m-3 shadow-md border-2 border-green-500"
         key={img.id}
         src={img.src.tiny}
         alt={img.alt}
@@ -43,23 +42,17 @@ export default function GameCards() {
     )
   }
 
+  const openImg = (img) => {
+    window.open(img.src.large2x, "_blank")
+  }
+
   return (
-    // <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-8 gap-5 m-5  ">
-    // <div className="flex  gap-5 m-5  ">
-    //   {removed?.map((img) => (
-    //     <img
-    //       className="rounded-xl  shadow-2xl border-2 border-green-500"
-    //       key={img.id}
-    //       src={img.src.tiny}
-    //       alt={img.alt}
-    //     />
-    //   ))}
-    // </div>
     <div className="flex ">
       <Carousel
         pt={{
           previousButton: { className: "size-10" },
           nextButton: { className: "size-10" },
+          
         }}
         circular
         value={data?.photos}
